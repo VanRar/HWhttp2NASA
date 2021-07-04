@@ -29,7 +29,7 @@ public class Main {
         CloseableHttpResponse response = httpClient.execute(request);
 
         ResponseNASA responseNASA = mapper.readValue(
-                response.getEntity().getContent(), new TypeReference<>() {
+                response.getEntity().getContent(), new TypeReference<ResponseNASA>() {
                 });
 
         System.out.println("Ссылка на скачиваемый файл:" + responseNASA.getUrl());//проверим ссылку
